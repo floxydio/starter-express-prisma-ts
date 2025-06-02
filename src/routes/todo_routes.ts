@@ -5,6 +5,6 @@ export default function TodoRoutes(app: Express) {
 
     const ctrlTodo = new TodoController();
 
-    app.get("/v1/todos", ctrlTodo.getTodos.bind(ctrlTodo));
-    app.post("/v1/todos", ctrlTodo.createTodo.bind(ctrlTodo));
+    app.get("/v1/todos", ctrlTodo.getTodos);
+    app.post("/v1/todos", ctrlTodo.createTodo);
 }

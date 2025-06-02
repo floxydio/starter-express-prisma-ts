@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { TodoService } from "../service/todo_service";
 
 export class TodoController {
-    public async getTodos(req: Request, res: Response): Promise<Response> {
+    public async getTodos(req: Request, res: Response): Promise<any> {
         const todoService = new TodoService();
         const [success, err] = await todoService.getTodos();
         if (err.error) {
@@ -12,7 +12,7 @@ export class TodoController {
         }
     }
 
-    public async createTodo(req: Request, res: Response): Promise<Response> {
+    public async createTodo(req: Request, res: Response): Promise<any> {
         const todoService = new TodoService();
         const [success, err] = await todoService.createTodo(req.body);
         if (err.error) {
